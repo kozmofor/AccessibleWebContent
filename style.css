@@ -395,3 +395,537 @@ article {
 article {
     animation-delay: 0.28s;
 }
+
+/* ==========================================================================
+   MODIFICATIONS - PROBLEME DE CONTRASTE INTENTIONNEL
+   ========================================================================== */
+
+
+/* 
+   Cette couleur (#dccfbe) est dérivée de votre palette (ton sable/beige), 
+   mais elle manque cruellement de contraste sur le fond var(--paper) (#f7f3ec).
+   Cela simule parfaitement une erreur d'accessibilité UI.
+*/
+.title-bad-contrast {
+    color: #a9312698 !important;
+    /* On garde les propriétés typographiques de base mais on force cette couleur */
+}
+
+.small {
+    font-size: 16px !important;
+    font-weight: normal !important;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - LIENS ET BOUTONS
+   ========================================================================== */
+
+.a11y-exercise-links {
+    margin-top: 3rem;
+}
+
+/* Erreur WCAG 1.4.1 : Utilisation de la couleur seule */
+.color-only-link {
+    text-decoration: none;
+    /* Suppression du soulignement natif */
+    color: var(--accent);
+    font-weight: normal;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Bouton texte classique (bon contraste) */
+.btn-text {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--ink-muted);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Erreur WCAG 1.4.11 : Contraste non textuel < 3:1 
+   La couleur #c5bcae sur le fond --paper (#f7f3ec) offre un ratio d'environ 1.6:1
+*/
+.btn-icon-bad {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: transparent;
+    color: #c5bcae;
+    /* Couleur avec un contraste insuffisant */
+    border: 2px solid #c5bcae;
+    /* Bordure également très peu contrastée */
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - TEXTE SUR IMAGE ET LAYOUT CÔTE À CÔTE
+   ========================================================================== */
+
+.image-text-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--rule);
+}
+
+/* Conteneur Flexbox pour placer l'image et le texte côte à côte */
+.image-text-layout {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de s'empiler sur petit écran */
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+/* Colonne de l'image */
+.image-container {
+    position: relative;
+    /* Indispensable pour le texte superposé en absolu */
+    flex: 1 1 300px;
+    /* Occupe la moitié de l'espace, minimum 300px */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+    /* Annule la marge par défaut de vos images */
+    border-radius: 4px;
+}
+
+/* Texte superposé centré sur l'image (sans fond sombre de protection) */
+.image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    width: 90%;
+    line-height: 1.2;
+}
+
+/* Colonne du texte */
+.side-text-content {
+    flex: 1 1 300px;
+}
+
+.side-text-content h3 {
+    margin-top: 0;
+    /* Aligne le titre en haut de la colonne */
+}
+
+/* ==========================================================================
+   MODIFICATIONS - ÉTATS DE FOCUS (KEYBOARD NAVIGATION)
+   ========================================================================== */
+
+.focus-exercise-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--rule);
+}
+
+.focus-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Style de base pour les boutons de cet exercice */
+.btn-focus {
+    padding: 0.8rem 1.2rem;
+    background-color: var(--ink-muted);
+    color: var(--paper);
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 
+   1. FOCUS TRÈS VISIBLE (Bonne pratique)
+   Un contour épais, avec un décalage (offset) et une couleur contrastée (var(--accent)).
+*/
+.focus-good:focus,
+.focus-good:focus-visible {
+    outline: 4px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* 
+   2. FOCUS INVISIBLE (Grosse erreur d'accessibilité)
+   Le fameux outline: none; souvent utilisé à tort pour des raisons esthétiques.
+*/
+.focus-none:focus,
+.focus-none:focus-visible {
+    outline: none !important;
+}
+
+/* 
+   3. FOCUS AVEC MAUVAIS CONTRASTE (Erreur subtile)
+   Le focus existe, mais la couleur (#eaddcb) est beaucoup trop proche 
+   de celle de l'arrière-plan var(--paper) (#f7f3ec).
+*/
+.focus-bad-contrast:focus,
+.focus-bad-contrast:focus-visible {
+    outline: 4px solid #eaddcb;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - ZOOM 200% ET ESPACEMENT TEXTE (HAUTEUR FIXE)
+   ========================================================================== */
+
+.zoom-spacing-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--rule);
+}
+
+.zoom-spacing-section img {
+    margin-top: 2rem;
+}
+
+.fixed-box-fail {
+    /* La hauteur est suffisante pour 100%, mais bloquera le texte zoomé à 200% */
+    height: 200px;
+    overflow: hidden;
+    /* Masque tout ce qui dépasse des 250px */
+    background-color: var(--ink-muted);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+.fixed-box-fail h3 {
+    color: var(--paper);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.fixed-box-fail p {
+    color: var(--paper);
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - FORMULAIRE COMPLET
+   ========================================================================== */
+
+.custom-form-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+}
+
+.standard-form {
+    margin-top: 1.5rem;
+    max-width: 650px;
+    /* Limite la largeur pour une meilleure lisibilité */
+}
+
+.form-group {
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.form-group legend {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+/* Masque le legend visuellement mais le garde pour les lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.input-wrapper {
+    margin-bottom: 1.2rem;
+}
+
+.input-wrapper label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--ink-faint);
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(169, 50, 38, 0.15);
+}
+
+textarea.form-input {
+    resize: vertical;
+    /* Permet uniquement l'agrandissement vertical */
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.checkbox-wrapper label {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - ERREURS SUR LA CASE À COCHER
+   ========================================================================== */
+
+/* Erreur WCAG 1.4.3 : Contraste insuffisant sur le texte du label */
+.bad-checkbox-label {
+    color: #f7c37f !important;
+    /* Couleur très claire, illisible sur le fond --paper */
+}
+
+/* Erreur visuelle supplémentaire : Rendre la case elle-même très pâle */
+.bad-checkbox {
+    accent-color: hsl(34, 84%, 73%);
+    opacity: 0.4;
+}
+
+/* Erreur WCAG 2.4.7 : Suppression totale de l'indicateur de focus natif */
+.bad-checkbox:focus,
+.bad-checkbox:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    /* Empêche l'écrasement de la case si le texte est long */
+    margin-top: 0.1rem;
+}
+
+input[type="radio"]:focus-visible,
+input[type="checkbox"]:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--ink);
+    color: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: transparent;
+    color: var(--ink);
+}
+
+.btn-submit:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ==========================================================================
+   MODIFICATIONS - CARROUSEL AUTOMATIQUE 
+   ========================================================================== */
+
+.carousel-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    /* Masque ce qui dépasse du conteneur */
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    background-color: var(--ink-muted);
+}
+
+/* La piste contient 5 slides, donc elle fait 500% de la largeur du conteneur */
+.carousel-track {
+    display: flex;
+    width: 500%;
+    /* Animation automatique infinie de 20 secondes */
+    animation: autoPlayCarousel 20s infinite;
+}
+
+.carousel-slide {
+    width: 20%;
+    /* 100% / 5 slides = 20% */
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    /* var(--ink) avec transparence */
+    color: var(--paper);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- Boutons de navigation (Desktop) --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--paper);
+    color: var(--ink);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+
+/* --- Animation du défilement --- */
+@keyframes autoPlayCarousel {
+
+    0%,
+    15% {
+        transform: translateX(0);
+    }
+
+    /* Slide 1 */
+    20%,
+    35% {
+        transform: translateX(-20%);
+    }
+
+    /* Slide 2 */
+    40%,
+    55% {
+        transform: translateX(-40%);
+    }
+
+    /* Slide 3 */
+    60%,
+    75% {
+        transform: translateX(-60%);
+    }
+
+    /* Slide 4 */
+    80%,
+    95% {
+        transform: translateX(-80%);
+    }
+
+    /* Slide 5 */
+    100% {
+        transform: translateX(0);
+    }
+
+    /* Retour direct au Slide 1 */
+}
+
+/* --- Responsive : Masquer les boutons sur mobile (< 768px) --- */
+@media (max-width: 768px) {
+    .carousel-btn {
+        display: none !important;
+        /* Rend la navigation impossible sur petit écran */
+    }
+}
