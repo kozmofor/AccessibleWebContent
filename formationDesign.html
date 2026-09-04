@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Design Temesis 2026</title>
+    <link rel="stylesheet" href="../style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="masthead">
+        <div class="masthead-inner">
+            <div class="nav-links">
+                <a href="../index.html" class="index-link">
+                    <span aria-hidden="true">← </span>
+                    Retour à la liste</a>
+            </div>
+        </div>
+        <div class="masthead-inner">
+            <p class="issue-line">Septembre 2026</p>
+            <h1>Exercices Accessibilité Web Design UX-UI</h1>
+            <!-- <p class="deck">Description</p>-->
+            <p class="byline">Par <span>Temesis</span> <!-- &nbsp;·&nbsp; 2026 --></p>
+        </div>
+    </header>
+
+    <article>
+        <section class="low-contrast-section">
+            <h2 class="title-bad-contrast">L'importance de la perception visuelle (28px)</h2>
+            <p>La perception visuelle joue un rôle fondamental dans la manière dont les utilisateurs interagissent avec
+                une
+                interface. La hiérarchie de l'information doit être claire pour guider l'œil du lecteur d'un élément à
+                l'autre
+                sans effort cognitif excessif.</p>
+
+            <h2 class="title-bad-contrast">Les subtilités de la typographie</h2>
+            <p>Le choix des polices, comme l'association de Playfair Display et Lora, apporte une dimension esthétique
+                indéniable. Cependant, la lisibilité ne dépend pas uniquement de la forme des lettres, mais aussi de
+                leur mise
+                en valeur par rapport au fond sur lequel elles reposent.</p>
+
+            <h3 class="small title-bad-contrast">Impact sur l'expérience utilisateur (16px)</h3>
+            <p>Lorsqu'un texte manque de contraste, il devient difficile à déchiffrer pour de nombreuses personnes,
+                notamment
+                celles ayant une déficience visuelle ou utilisant des écrans dans des environnements très lumineux. Cela
+                crée
+                une friction directe dans l'expérience utilisateur (UX).</p>
+        </section>
+        <section class="a11y-exercise-links">
+            <h2>Problèmes d'identification et de boutons</h2>
+
+            <p>Il est important que les éléments interactifs soient clairement identifiables. Par exemple, si je place
+                un <a href="#" class="color-only-link">lien dans cette phrase</a>, il ne devrait pas s'appuyer
+                uniquement sur la
+                couleur pour être repéré par l'utilisateur.</p>
+
+            <div class="button-group">
+                <a href="#" class="btn-text">Valider l'action</a>
+
+                <a href="#" class="btn-icon-bad" aria-label="Paramètres">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        <section class="image-text-section">
+            <h2>Texte superposé et disposition</h2>
+
+            <div class="image-text-layout">
+                <!-- Bloc Image avec texte superposé -->
+                <div class="image-container">
+                    <img src="https://picsum.photos/seed/design/800/600" alt="Exemple de paysage urbain complexe">
+                    <div class="image-overlay-text">
+                        Illisible sur fond clair
+                    </div>
+                </div>
+
+                <!-- Bloc Texte à côté de l'image -->
+                <div class="side-text-content">
+                    <h3>Les dangers du texte sur image</h3>
+                    <p>Placer du texte directement sur une photographie est une pratique esthétique courante, mais
+                        dangereuse
+                        pour l'accessibilité. Si l'image charge mal, ou si elle contient des zones très claires et très
+                        sombres
+                        en même temps, le texte devient impossible à lire de manière fluide.</p>
+                    <p>Ce layout démontre également comment structurer des éléments côte à côte sur grand écran, tout en
+                        s'assurant qu'ils s'empilent correctement sur un écran de téléphone mobile.</p>
+                </div>
+            </div>
+        </section>
+        <section class="zoom-spacing-section">
+            <h2>Zoom 200% et espacement du texte</h2>
+            <p>Le bloc ci-dessous s'affiche très bien à taille normale. Mais si vous zoomez à 200% dans votre
+                navigateur, le
+                texte va grossir, revenir à la ligne, et nécessiter plus de hauteur. Comme sa hauteur est bloquée, le
+                texte sera
+                coupé.</p>
+
+            <div class="fixed-box-fail">
+                <h3>Contenu bloqué</h3>
+                <p>Ce texte est parfaitement lisible à 100%. Cependant, si vous appliquez un espacement de texte (WCAG
+                    1.4.12)
+                    ou si vous zoomez à 200% (WCAG 1.4.4), le conteneur refusera de s'agrandir. La fin de cette phrase
+                    va
+                    inévitablement disparaître hors du cadre, rendant la fin inaccessible.</p>
+            </div>
+            <img src="https://intopia.digital/wp-content/uploads/2023/10/Intopia_WCAGPoster_ver19_th.png" alt="">
+        </section>
+        <section class="focus-exercise-section">
+            <h2>Visibilité du focus (Navigation au clavier)</h2>
+            <p>La navigation au clavier (avec la touche <code>Tab</code>) nécessite des repères visuels clairs. Essayez
+                de
+                naviguer sur les boutons ci-dessous avec votre clavier pour observer les différences.</p>
+
+            <div class="focus-buttons-container">
+                <!-- 1. Focus très visible (Bonne pratique) -->
+                <button class="btn-focus focus-good">Focus très visible</button>
+
+                <!-- 2. Focus invisible (Erreur WCAG 2.4.7) -->
+                <button class="btn-focus focus-none">Focus invisible</button>
+
+                <!-- 3. Focus peu contrasté (Erreur WCAG 1.4.11) -->
+                <button class="btn-focus focus-bad-contrast">Focus manque de contraste</button>
+            </div>
+        </section>
+        <section class="custom-form-section">
+            <h2>Formulaire d'inscription complet</h2>
+
+            <form action="#" class="standard-form">
+                <!-- 5 Champs de données (Data fields) -->
+                <div class="input-wrapper">
+                    <input placeholder="Nom*" type="text" id="nom" name="nom" class="form-input" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <input placeholder="Prénom*" type="text" id="prenom" name="prenom" class="form-input" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <input placeholder="Adresse Email*" type="email" id="email" name="email" class="form-input"
+                        required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" class="form-input">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="societe">Société / Organisation</label>
+                    <input type="text" id="societe" name="societe" class="form-input">
+                </div>
+
+
+                <!-- 1 Champ Zone de texte (Textfield) -->
+                <div class="form-group input-wrapper">
+                    <label for="message">Vos attentes ou besoins spécifiques</label>
+                    <textarea id="message" name="message" rows="4" class="form-input"></textarea>
+                </div>
+
+                <!-- 1 Champ avec Boutons Radio -->
+                <fieldset class="form-group">
+                    <legend>Format de la formation</legend>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="format-presentiel" name="format" value="presentiel" checked>
+                            <label for="format-presentiel">En présentiel (Sur site)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="format-distanciel" name="format" value="distanciel">
+                            <label for="format-distanciel">En distanciel (Visioconférence)</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-group checkbox-wrapper">
+                    <input type="checkbox" id="consentement" name="consentement" class="bad-checkbox" required>
+                    <label for="consentement" class="bad-checkbox-label">J'accepte les conditions générales et le
+                        traitement de mes
+                        données.</label>
+                </div>
+
+                <!-- 1 Bouton de confirmation -->
+                <button type="submit" class="btn-submit">Confirmer l'inscription</button>
+            </form>
+        </section>
+        <section class="carousel-section">
+            <h2>Carrousel d'images (Inaccessible)</h2>
+            <p>Ce carrousel défile automatiquement en boucle sans bouton "Pause" (Erreur WCAG 2.2.2). De plus, sur
+                mobile, les
+                boutons de navigation disparaissent, privant l'utilisateur de tout contrôle manuel.</p>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/slide1/800/400" alt="Paysage abstrait 1">
+                        <div class="slide-caption">Diapositive 1</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/slide2/800/400" alt="Paysage abstrait 2">
+                        <div class="slide-caption">Diapositive 2</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/slide3/800/400" alt="Paysage abstrait 3">
+                        <div class="slide-caption">Diapositive 3</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/slide4/800/400" alt="Paysage abstrait 4">
+                        <div class="slide-caption">Diapositive 4</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/slide5/800/400" alt="Paysage abstrait 5">
+                        <div class="slide-caption">Diapositive 5</div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev-btn" aria-label="Précédent" tabindex="-1">❮</button>
+                <button class="carousel-btn next-btn" aria-label="Suivant" tabindex="-1">❯</button>
+            </div>
+        </section>
+    </article>
+
+    <footer></footer>
+</body>
+
+</html>
