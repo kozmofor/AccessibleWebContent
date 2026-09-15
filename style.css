@@ -929,3 +929,95 @@ input[type="checkbox"]:focus-visible {
         /* Rend la navigation impossible sur petit écran */
     }
 }
+
+/* --- Section: Le Pupitre de Contrôle de l'Éther --- */
+
+.interactive-dashboard-section {
+    margin-bottom: 4rem;
+}
+
+.interactive-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne */
+    gap: 15px;
+    padding: 25px;
+    background-color: #1a1a24;
+    /* Fond sombre mystérieux */
+    border: 1px solid #4a4a5a;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px 0 0 0;
+}
+
+.dashboard-item {
+    flex: 1 1 180px;
+    /* S'adapte à l'espace, minimum 180px */
+    padding: 15px;
+    background: #2a2a35;
+    color: #d4af37;
+    /* Texte doré antique */
+    border: 2px solid #3a3a45;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    /* Hérite de la police du site */
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Effet de lueur bleutée au survol, rappelant la flore bioluminescente */
+.dashboard-item:hover {
+    background: #3a3a4a;
+    border-color: #6fbaff;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(111, 186, 255, 0.15);
+}
+
+/* 
+ * Règles d'ordre Flexbox (Ordre Visuel)
+ * Bouleverse complètement l'ordre HTML pour le rendu visuel
+ */
+.item-journal {
+    order: 1;
+}
+
+/* S'affiche en 1er */
+.item-cartographie {
+    order: 2;
+}
+
+/* S'affiche en 2ème */
+.item-alertes {
+    order: 3;
+}
+
+/* S'affiche en 3ème */
+.item-transmissions {
+    order: 4;
+}
+
+/* S'affiche en 4ème */
+.item-reserves {
+    order: 5;
+}
+
+/* S'affiche en 5ème */
+.item-boucliers {
+    order: 6;
+}
+
+/* S'affiche en 6ème */
+.item-astrolabe {
+    order: 7;
+}
+
+/* S'affiche en 7ème (était HTML #1) */
+.item-manuel {
+    order: 8;
+}
+
+/* S'affiche en 8ème */
