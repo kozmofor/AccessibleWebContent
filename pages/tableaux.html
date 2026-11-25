@@ -22,15 +22,207 @@
             </div>
         </div>
         <div class="masthead-inner">
-            <p class="issue-line">xxx Avril 2026</p>
-            <h1>Tableaux de données</h1>
-            <p class="deck">Description</p>
+            <p class="issue-line">27 Octobre 2026</p>
+            <h1>Chronique de l'Expédition Boréale</h1>
+            <p class="deck">Registre officiel des découvertes faites par l'équipage de la goélette « L'Astragale au-delà
+                du 78ᵉ parallèle nord.</p>
             <p class="byline">Par <span>Temesis</span> &nbsp;·&nbsp; 14 min de lecture</p>
         </div>
     </header>
 
     <article>
-        <p>Contenu ici</p>
+        <div class="table-container">
+            <div class="custom-table">
+
+                <div class="table-caption">
+                    Journal de bord — Relevés cartographiques et observations (Campagne 1889)
+                </div>
+
+                <div class="table-row-group table-header-group">
+                    <div class="table-row">
+                        <span class="table-cell table-header-cell">Code archive</span>
+                        <span class="table-cell table-header-cell">Date du relevé</span>
+                        <span class="table-cell table-header-cell">Lieu d'observation</span>
+                        <span class="table-cell table-header-cell">Officier responsable</span>
+                        <span class="table-cell table-header-cell">Phénomène répertorié</span>
+                    </div>
+                </div>
+
+                <div class="table-row-group table-body-group">
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-01</span>
+                        <span class="table-cell">12 mai 1889</span>
+                        <span class="table-cell">Cap des Brumes</span>
+                        <span class="table-cell">Capitaine Vance</span>
+                        <span class="table-cell">Balise de cuivre submergée</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-02</span>
+                        <span class="table-cell">18 mai 1889</span>
+                        <span class="table-cell">Baie du Silence</span>
+                        <span class="table-cell">Dr. H. Leroux</span>
+                        <span class="table-cell">Squelette d'ours albinos géant</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-03</span>
+                        <span class="table-cell">27 mai 1889</span>
+                        <span class="table-cell">Fjord d'Obsidienne</span>
+                        <span class="table-cell">Lieutenant Morvan</span>
+                        <span class="table-cell">Lueur azurée sous la banquise</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-04</span>
+                        <span class="table-cell">04 juin 1889</span>
+                        <span class="table-cell">Île de la Sentinelle</span>
+                        <span class="table-cell">Dr. H. Leroux</span>
+                        <span class="table-cell">Monolithe aux gravures inconnues</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-05</span>
+                        <span class="table-cell">11 juin 1889</span>
+                        <span class="table-cell">Écueil des Épaves</span>
+                        <span class="table-cell">Second B. Delorme</span>
+                        <span class="table-cell">Navire marchand sans gouvernail</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-06</span>
+                        <span class="table-cell">22 juin 1889</span>
+                        <span class="table-cell">Glacier Noir</span>
+                        <span class="table-cell">Lieutenant Morvan</span>
+                        <span class="table-cell">Craquements rythmés sous la glace</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-07</span>
+                        <span class="table-cell">03 juillet 1889</span>
+                        <span class="table-cell">Passage d'Éole</span>
+                        <span class="table-cell">Capitaine Vance</span>
+                        <span class="table-cell">Vents circulaires persistants</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-08</span>
+                        <span class="table-cell">14 juillet 1889</span>
+                        <span class="table-cell">Crique des Marées Bleues</span>
+                        <span class="table-cell">Second B. Delorme</span>
+                        <span class="table-cell">Banc de poissons luminescents</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-09</span>
+                        <span class="table-cell">29 juillet 1889</span>
+                        <span class="table-cell">Plateau du Gel Éternel</span>
+                        <span class="table-cell">Dr. H. Leroux</span>
+                        <span class="table-cell">Végétation fossile intacte</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="table-cell">EXP-10</span>
+                        <span class="table-cell">08 août 1889</span>
+                        <span class="table-cell">Refuge d'Aurora</span>
+                        <span class="table-cell">Capitaine Vance</span>
+                        <span class="table-cell">Boussoles affolées, aurore rouge</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mauvaise pratique d'accessibilité : tableau purement natif où l'en-tête (horizontal et vertical) 
+                     est simulé uniquement avec des <td> stylisés en gras au lieu de <thead>, <th> et de l'attribut scope -->
+        <div class="table-container">
+            <p class="fake-caption">Catalogue des instruments du dôme — Registre 1894</p>
+            <table class="fake-header-table">
+                <tbody>
+                    <!-- Première ligne visuelle : en-têtes sans balise <th> ni <thead> -->
+                    <tr class="fake-thead-row">
+                        <td class="fake-th-cell">Référence</td>
+                        <td class="fake-th-cell">Désignation</td>
+                        <td class="fake-th-cell">Atelier d'origine</td>
+                        <td class="fake-th-cell">État mécanique</td>
+                        <td class="fake-th-cell">Localisation</td>
+                    </tr>
+
+                    <!-- Lignes de données : la première colonne est stylisée comme un en-tête mais reste un simple <td> sans scope="row" -->
+                    <tr>
+                        <td>AST-01</td>
+                        <td>Astrolabe à pendule</td>
+                        <td>Ateliers de Prague</td>
+                        <td>Parfait</td>
+                        <td>Aile Orientale</td>
+                    </tr>
+                    <tr>
+                        <td>AST-02</td>
+                        <td>Lunette méridienne</td>
+                        <td>Maison Dollond (Londres)</td>
+                        <td>Lentille voilée</td>
+                        <td>Coupole Nord</td>
+                    </tr>
+                    <tr>
+                        <td>AST-03</td>
+                        <td>Sextant en laiton</td>
+                        <td>Compagnie des Indes</td>
+                        <td>Fonctionnel</td>
+                        <td>Salle des Cartes</td>
+                    </tr>
+                    <tr>
+                        <td>AST-04</td>
+                        <td>Chronographe de marine</td>
+                        <td>Horlogerie Berthoud</td>
+                        <td>Ressort brisé</td>
+                        <td>Cabinet des Pièces</td>
+                    </tr>
+                    <tr>
+                        <td>AST-05</td>
+                        <td>Prisme spectroscopique</td>
+                        <td>Manufacture de Munich</td>
+                        <td>Ébréché</td>
+                        <td>Laboratoire Optique</td>
+                    </tr>
+                    <tr>
+                        <td>AST-06</td>
+                        <td>Sphère armillaire</td>
+                        <td>Atelier de Nuremberg</td>
+                        <td>Axes grippés</td>
+                        <td>Galerie Centrale</td>
+                    </tr>
+                    <tr>
+                        <td>AST-07</td>
+                        <td>Héliomètre à double foyer</td>
+                        <td>Fraunhofer &amp; Utzschneider</td>
+                        <td>Excellent</td>
+                        <td>Coupole Sud</td>
+                    </tr>
+                    <tr>
+                        <td>AST-08</td>
+                        <td>Microscope micrométrique</td>
+                        <td>Maison Zeiss (Iéna)</td>
+                        <td>Calibré</td>
+                        <td>Atelier de Mesure</td>
+                    </tr>
+                    <tr>
+                        <td>AST-09</td>
+                        <td>Miroir de spéculum poli</td>
+                        <td>Fonderie de Liège</td>
+                        <td>Oxydation légère</td>
+                        <td>Magasin Bas</td>
+                    </tr>
+                    <tr>
+                        <td>AST-10</td>
+                        <td>Théodolite azimutal</td>
+                        <td>Secrétan (Paris)</td>
+                        <td>Complet avec niveau</td>
+                        <td>Terrasse Haute</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </article>
 
     <footer></footer>
