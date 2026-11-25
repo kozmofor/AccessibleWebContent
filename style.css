@@ -1018,3 +1018,224 @@ input[type="checkbox"]:focus-visible {
 .item-manuel {
     order: 8;
 }
+
+/* ==========================================================================
+   TABLEAUX DE DONNÉES
+   ========================================================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    background: transparent;
+}
+
+caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    caption-side: top;
+}
+
+thead th {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border-bottom: 2px solid var(--ink);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+
+/* Cellules de contenu standards */
+tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+}
+
+/* En-têtes de lignes (première colonne) */
+tbody th[scope="row"] {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: left;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background-color: rgba(26, 18, 8, 0.03);
+}
+
+tbody tr:last-child th[scope="row"],
+tbody tr:last-child td {
+    border-bottom: 2px solid var(--ink);
+}
+
+/* ==========================================================================
+   TABLEAUX EN DIV / SPAN (CSS GRID)
+   ========================================================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.custom-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 680px;
+    /* Assure la lisibilité sur mobile via défilement horizontal */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: transparent;
+}
+
+.table-caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.table-row-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.table-row {
+    display: grid;
+    /* 5 colonnes : première colonne compacte, colonnes centrales équilibrées, dernière large */
+    grid-template-columns: 140px 150px 1.2fr 1.2fr 2fr;
+    align-items: center;
+}
+
+/* En-têtes horizontaux */
+.table-header-group .table-row {
+    border-bottom: 2px solid var(--ink);
+}
+
+.table-header-cell {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+}
+
+/* Cellules standards */
+.table-cell {
+    padding: 0.85rem 1rem;
+    color: var(--ink);
+}
+
+/* Cellules de contenu dans le corps */
+.table-body-group .table-row {
+    border-bottom: 1px solid var(--rule);
+    transition: background-color 0.15s ease;
+}
+
+.table-body-group .table-row:hover {
+    background-color: rgba(26, 18, 8, 0.03);
+}
+
+/* En-tête de ligne (première colonne) */
+.table-row-header {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+/* Bordure inférieure de fin de tableau */
+.table-body-group .table-row:last-child {
+    border-bottom: 2px solid var(--ink);
+}
+
+/* ==========================================================================
+   TABLEAU AVEC EN-TÊTES NON DÉCLARÉS (SIMULATION VISUELLE UNIQUEMENT)
+   ========================================================================== */
+
+.fake-caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+table.fake-header-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    background: transparent;
+}
+
+/* Simule visuellement <thead> sans aucune déclaration sémantique */
+.fake-thead-row {
+    border-bottom: 2px solid var(--ink);
+}
+
+.fake-thead-row .fake-th-cell {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+
+/* Cellules de contenu */
+.fake-header-table tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+}
+
+/* Simule visuellement l'en-tête de ligne (colonne 1) avec un simple <td> */
+.fake-header-table tbody td.fake-row-header {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.fake-header-table tbody tr:hover {
+    background-color: rgba(26, 18, 8, 0.03);
+}
+
+.fake-header-table tbody tr:last-child td {
+    border-bottom: 2px solid var(--ink);
+}
